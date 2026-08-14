@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Roupas">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#5a4d3a">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAPyElEQVR4nO3debQU1Z3A8btU9Va98dAEkH1RgiKyJIBEHQZBQHZkExAkIJvsCBgWZZEgATXEhdGMkphxzMmczBAZlQRFZ+LEGfWg0ZEZBVk0LvCW7q6tq7ruvfNHC85RLrx+r5d6+Pv89f553fW6v3Wr6r5a8K0jr0UAnAup9AIA/4I4gBTEAaQgDiAFcQApiANIQRxACuIAUhAHkII4gBTEAaQgDiAFcQApiANIQRxACuIAUhAHkII4gBTEAaQgDiAFcQApiANIQRxACuIAUhAHkII4gBTEAaQgDiAFcQApiANIQRxACuIAUhAHkII4gBTEAaQgDiAFcQApiANIQRxACuIAUhAHkII4gBTEAaQgDiAFcQApiANIQRxACuIAUkqlF6AwGGNMCBIF/Q4SnAtR0O9cGCEEIVzQYiAhOOfFXYySajJxYIwJIY6TdR2noF8UAoXCYUVRituHaeiFviClNBzREEJNJZGmEQchxHVd2zLadejSsUvXq3r0imhRzvgFVl2BMMaMsd88/URt9SlFDQhRhG+FEOK6zqTpc9p17OI6DiYXGj+EIIQe/u93jh/94PB77wgkNC3KuUCFDYAV4N84MMb5VZNSqmcy7Tt2HjFuyjW9+zb/TgvBOcb1GtI5Y0QJhSORreuWRVUVIywa95VQRamrqR4yfMykGQsFczCp306bEAP+ZrDjZN//y6GDf9z37y/v17QoOvMH+hb25wMAMSaMeYQQSmkqVXvj0FG3z18RiyezlpHL5TDG9V/tOOOxeGLfPz/71O4HtWicc9bgpaKUGoZ+Te++K9f9RAjBOatnowghJBAmJBLRBEYH9+/7u13bFEWllHqeRyn1ZyV+HDkopbZtx2Jxz/NSdTU3Dhu9cMV6L+fqqVpCKaW0oFcjhFiWOXLcre+/e+jPfzqYSCQ9z2vAUuU3bYlEcvaClcFgyLZNSgv+9ExTRwgPGjYuEAjs2r6RK4oWjZqGTqmC/TeQ+O5QllBaU326Z59+t81ZdPrUZ0OGj7lzxXonm/VyOaooBaypX8EIIcsyFq/e1K37NZlMutC8EPpy3wUhsfqe7S1atbYsk5CCXwQhRAglhOip6usG3bx0zUY9k+rZp/+0WXemU3Wcc1LPjVS5+Ghp8scjRiY9YeqsFeu3q2qgddsOsxasyOVczll9t+6SV+acqar6o/krks2qvC83TAUghGSz9sTpc7p272maRgPy+v+oouipmgEDbx4+emImnRoxfvrazQ8Eg0HHyTbylYvLL3EQQjjnqbrayTPmzpy3LBgMplK1o2+ZGokmXcdp/CpFCLUts9MV3Zas2mjbVkEDOFWU2urTQ0eMGzd5tp5OFeX7I5S6WWPULVOjsUTONfvfcOOqe7aHQmHT0P3Thy/ioJS6jhMIBldtuH/CrbP0dCrn2h07Xd6jV18na5AifViUUj2durrXD6bOWpDN2vV8WUqpZRq9+g6YPGOeZaaKNfJjjD0v16zqkmuvH+TlcplU3eXf677lgcevvLpXJpNWFLUo79JIlT9aoVQxjYwWjd29aef3uvfR0zWUUiQEVZT8EUFhE5EXwjmPxqt2bL7r1ZdeaFZ1CTvvzinGJJdzwuHIjkefTlY1z9p20XcLFEXJ7yAzxiIRzc252zeufuM/Xm3W/FLOeWXnQio8ciiKquuprlf2uPf+R7p2uzqTqv5yUMXY8zzOilwGQghjbJmpuYtX9+jZ9/xj+Jk9lcCKdVuTVZdkLasUO4y5XC7/A6XUskxCyMp1W8dNmWlbBsYI40p+QZV8b0ppTfUXPXv3X7f1Z+06djEMXVG+OjjEGKOGHJtcAMaYM6ZFY7PvXBkOR3LynVNCqKFnxk+5vXvPa22raFu3by7P2Z8ppV7OxRjPWrB6+uxFmXQ6P9lTivetj8q8McYEY2xZ5oixU1asvY9gYjX6EKD+CKGmYbRt3+mu9duYlxNCfLMPqiipuuoxE6ePnXybnq5uwJRGw2BMhBB6unrULdOWrL43HI442SxVKjMdVYE4CCGMeXomPe1HC+ct24AJ8Ty3zLvolFLT0Hv06Td20gzbMr+2dlJKbdPs1r3nhGmzS7Q1OQ+MMaXU0NODho1be9+D0XjCaNDcTOOVO44vD0wCwfnL1o6ZMF1PVwshKrJlpZQa6dSU2xcOHDyitqb67NpJCLFtK9GsatU924PBoOd5DZp5K8LiZVKnO3buunbLg52v6FaRQ9yyfiuUKqaha7H4hp/sGjpqop5JU0or8tHnYUJsS582e+FVPXrblkUoxRhzzoPB4PyldyeSVU42W8FNvqKopp5p277jfQ888f3+19fV1hBS1o+rfH85pdQ09bbtO6/dvLNTl65fHZhUDsaYeV483mzJ6nsDgUDOdSlVUnW1U2bM691voB/mowiljm0z5i1ds2nw8LG2bZ5zD6lU716ON8GYEFpXV/P9/tdv2/Vk2/adDT3jk3keQohlGd9p0WrZ3ZsppalUzbhJt900cryerlYqtBv4NYRSxhhjfPHqzbMXrLQskzFWnvGs5O+BMUZCWKY+cPCIpWs2CSEcJ1uiw8KGoZRaptmn/98OHTm+XYfO02cv8nI5X/0PLH+Kgp6uGTp60rwld2OMXdcpw2dY2hlSQghjLGtbc+5cNWzMJMvIlHNULBRnzHGyWizOKrQTekGcMy2aOHHsw20bVp4+9bkWjTLW8NNTLqiE6wehNJdzGfPuWLxm2JjJerrOz2UghAilWjTm2zJQfl4uk2rXofOPtzzYsnUb09BLOn6UKg6qKJZpJps13/rQL24aMdbI1Fb2wKSeGCvk5K5KoIpi6pkWrS7b/vCeHw4ckq6rpZQW/Z8MeSXZ56KUGpl0i5at12za0aZdR0NPl22GsZF8XkYeodR1HEVRF911D8Hk5T88F4snESr+iWTFHzkURUmnaq8bOGTbridbtmpj6JmmUkYTQgjxvJzrOAtXbli4fL3jZEtxIlkxXy5/FmT16S8GDhmxaNXGYCjst1ObLiaEECFE1raGjJy4cPm6bNbO2nZxR75iHq0IIdRAYMacxQNuGMyYJzhvzLl9oJ44Z8FQ+OTxj37x8E+Pfng4EAgWa/tStC8PYyw4DwZDiWRVMBRG/r9k56IghBACKYoajyei0ZjgoojnORRz5MAYe57nZO2BQ26eNX95RIv5YQb6IsY5p4oSjsRe2PvsM3t2m0ZG02JFvNaymLuKQghFUdRY4qUXn/vkxPEZc5de2aOXkUljhGD7UmyCMR7RND2dfuqxBw68+PtAIKhpjbpk65tKMkNKFcUyDULo+Cm3T5w+O+c4rs+mzJu0/IFJJJp499Drj+zc8vlnn8RiCZHfwBRVqabPCaGMs6xl9vrBgJlzl17Wpp1p6BjjJjGR4GeMeaFwxMt5e3/79N5/+gfGvFAowlhDruG7oBL+byWfgmkaWjS2cNnaftcNymatnFvuk74uGvmxIRpLfP7pxw/v2PSXQ2/E4on89T4leseSX5pACPW8nOtkBw0dNWXmvGSz5nom7ZP/hjchjLFAIKAGggde+Jdnntpt6JmIppX0v26oPNet5IeQVKr28q5X3bFo9RVX9jAyKdhLrT/P82LxRDqVevaXu5/f+5toLE6pUoY7wJTvoiaqKLZlKlQZNWHqpGlzPOa5WdhLvYD83Wa0WPM3Xz+4Z/dDn5w8Fk8045yV53r8sl7xlt9AGnqm3w8HzrhjScvL2hh6hhACe6nnxBgLBkMCid//9te/e/aXnueFNe38l+gVVwUuh6SUGnomFk/Omr/shsGjbDNT2Ut3fCg/MGixxKcfH9v1043/8947WjRW0n3Pc6rMtbKUUtd1GGODbho1ZcZcLRa3LZPSAu/Pd5FijKlqQFHVV/74/DN7HkunajUtylgFrput2IXU+U2JoWdat+uwZPXGLl2vsgzdhzcwKS/BGNeiMcs0nnx050v7n4tomqIEijvvWX8VvsqeUprNZiml4ybPGDX+VkqpbVmVuvqvss7Me8beev1Pex5/6K8nj2uxeCnuoFp/lb8FA8YEIZGqq732hkGz5i9v0aqNnq4r89U7Fcc8LxTRBOfP/e4fn9nzmEJpIBiu1IBxVuXjyFMURc+kk1XNp86cP2j4ONvMcNaoWz01IZyxaKLq2IeH//7RHe++/WY8kRQICR/cyNYvcaAze6k51x026pZJ0+8IRSKu43wLxg8cCodfPfD8r598pLb6dCyRLOfB6vn5KA50Zi5Vz6TbtOuwdM3mth06uU62sjcwKT38+M/vf+XAv4ZCkUAgUOoZ8YL463MXQnDOk82af3Tkg5MnjqrFO+PNh4QQhJCsbR1688/hsKaqqq/KQH6LIy8/M6iqAXTxlnEWxjgS0YSo5FGJjB/jQAj588MqEd8+RMGncQA/gDiAFMQBpCAOIAVxACmIA0hBHEAK4gBSEAeQgjiAFMQBpCAOIAVxACmIA0hBHEAK4gBSEAeQgjiAFMQBpCAOIAVxACmIA0hBHEAK4gBSEAeQgjiAFMQBpCAOIAVxACmIA0hBHEAK4gBSEAeQgjiAFMQBpPwbx7fknmB+/jP9G8e34lFfQlBKfXujVZ8uFkLif99/9+J+wIYQQg2GTp44mqqtplT14RDizzgEIcqxIx/kXBdfzIFwqijHPzpi2xYhfnycmR/j4JxHNO3we28ffu/tkBblPruvb7EQrNiWcXD/vmAwlH+Wm9/4MY48xrx/e+kFepE+OIF5Xjgafeet//z45LFAMAhxFIBzrkVjL+/f99orf4gmmnu+eZBAUXDGQuFIqrb6V0/83M9PhfBpHAghIUQoHHl455Y3Xns5nqzyPO/iuBU6Y14wFDYNfev65ae++CwYDPlwVzTP13EQQhESO7f++L9eOxhPXooI4Zzxij7ZqsEE55wxIUQsnjQM/b71y45+cDgS0Xx743Pkt+etfBMhxPNyCOHRE6bePGZyNBpDCDlOtmn1IRAKBgJUUV3Xffut13/1+M8+//SvZXjeeCP5PQ6EEMaYc+5k7eaXfve6gTd179mnTbuOoVBYcI78vMU+SwiMyScfHzvx0ZEDL+49cewI5yIUDvv/KKwJxIHOPMHJdV3XdQgm323ZSlH9OGt0bgIRQk6f+swyTVUNBEOhfO6VXqwLaxpT1EIIIYSqqoFAECFRU31aCI4RbhJ1YIQEEqoaiCWSgosm9CiZphFHnhBCCIYQUlW10stSMCGE/7cjX9OU4jirqax5TZ1/D2VBxUEcQAriAFIQB5CCOIAUxAGkIA4gBXEAKYgDSEEcQAriAFIQB5CCOIAUxAGkIA4gBXEAKYgDSEEcQAriAFIQB5CCOIAUxAGkIA4gBXEAKYgDSEEcQAriAFIQB5CCOIAUxAGkIA4gBXEAKYgDSP0fCUqa+N/nVqAAAAAASUVORK5CYII=">
+<title>Marcação de Roupa</title>
+<style>
+  :root{
+    --bg:#f5f3ee;
+    --card:#ffffff;
+    --ink:#2b2b28;
+    --muted:#6b6a64;
+    --accent:#7a6a53;
+    --accent-dark:#5a4d3a;
+    --line:#e7e3da;
+    --piso1:#d9c9a3;
+    --piso2:#b9c9b0;
+    --danger:#b5544a;
+    --ok:#5a7d5a;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Georgia', 'Times New Roman', serif;
+    background:var(--bg);
+    color:var(--ink);
+    padding:24px 16px 80px;
+  }
+  h1{
+    text-align:center;
+    font-size:1.6rem;
+    letter-spacing:0.03em;
+    color:var(--accent-dark);
+    margin:0 0 4px;
+  }
+  .subtitle{
+    text-align:center;
+    color:var(--muted);
+    font-size:0.9rem;
+    margin-bottom:22px;
+  }
+  .controls{
+    max-width:760px;
+    margin:0 auto 20px;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:16px;
+    box-shadow:0 1px 3px rgba(0,0,0,0.05);
+  }
+  .search-row{
+    display:flex;
+    gap:10px;
+    margin-bottom:12px;
+  }
+  #search{
+    flex:1;
+    padding:10px 14px;
+    font-size:1rem;
+    border:1px solid var(--line);
+    border-radius:8px;
+    font-family:inherit;
+    background:#fdfcfa;
+  }
+  #search:focus{outline:none; border-color:var(--accent);}
+  .filters{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    align-items:center;
+  }
+  .chip{
+    padding:6px 14px;
+    border-radius:999px;
+    border:1px solid var(--line);
+    background:#fdfcfa;
+    color:var(--muted);
+    font-size:0.85rem;
+    cursor:pointer;
+    user-select:none;
+    transition:all .15s;
+  }
+  .chip:hover{border-color:var(--accent);}
+  .chip.active{
+    background:var(--accent);
+    color:#fff;
+    border-color:var(--accent);
+  }
+  .toolbar{
+    max-width:760px;
+    margin:0 auto 12px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    flex-wrap:wrap;
+  }
+  .count{
+    color:var(--muted);
+    font-size:0.85rem;
+  }
+  .btn{
+    padding:8px 16px;
+    border-radius:8px;
+    border:1px solid var(--accent);
+    background:var(--accent);
+    color:#fff;
+    font-size:0.85rem;
+    font-family:inherit;
+    cursor:pointer;
+  }
+  .btn.secondary{
+    background:#fdfcfa;
+    color:var(--accent-dark);
+  }
+  .btn.danger{
+    background:#fdfcfa;
+    color:var(--danger);
+    border-color:var(--danger);
+  }
+  table{
+    max-width:760px;
+    width:100%;
+    margin:0 auto;
+    border-collapse:collapse;
+    background:var(--card);
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 1px 3px rgba(0,0,0,0.05);
+  }
+  thead th{
+    text-align:left;
+    background:var(--accent-dark);
+    color:#fff;
+    font-weight:normal;
+    font-size:0.8rem;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    padding:10px 12px;
+    cursor:pointer;
+    position:sticky;
+    top:0;
+  }
+  thead th:hover{background:var(--accent);}
+  thead th.no-sort{cursor:default;}
+  thead th.no-sort:hover{background:var(--accent-dark);}
+  tbody td{
+    padding:9px 12px;
+    border-bottom:1px solid var(--line);
+    font-size:0.92rem;
+  }
+  tbody tr:hover{background:#faf7f0;}
+  tbody tr:last-child td{border-bottom:none;}
+  .piso-badge{
+    display:inline-block;
+    padding:2px 9px;
+    border-radius:999px;
+    font-size:0.78rem;
+    border:none;
+    font-family:inherit;
+  }
+  .piso-1 .piso-badge{background:var(--piso1);}
+  .piso-2 .piso-badge{background:var(--piso2);}
+  .empty-name{color:#b7b3a8; font-style:italic;}
+  .no-results{
+    max-width:760px;
+    margin:20px auto;
+    text-align:center;
+    color:var(--muted);
+    padding:30px;
+  }
+  mark{
+    background:#f0dfa0;
+    padding:0 2px;
+    border-radius:2px;
+  }
+  [contenteditable="true"]{
+    outline:none;
+    border-radius:4px;
+    padding:2px 4px;
+    margin:-2px -4px;
+  }
+  [contenteditable="true"]:focus{
+    background:#fff8e6;
+    box-shadow:0 0 0 2px var(--accent);
+  }
+  .del-btn{
+    background:none;
+    border:none;
+    color:var(--danger);
+    font-size:1rem;
+    cursor:pointer;
+    padding:4px 8px;
+  }
+  .save-indicator{
+    position:fixed;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%) translateY(20px);
+    background:var(--ok);
+    color:#fff;
+    padding:8px 18px;
+    border-radius:999px;
+    font-size:0.85rem;
+    opacity:0;
+    transition:all .3s;
+    pointer-events:none;
+    z-index:10;
+  }
+  .save-indicator.show{
+    opacity:1;
+    transform:translateX(-50%) translateY(0);
+  }
+  .undo-toast{
+    position:fixed;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%) translateY(20px);
+    background:var(--danger);
+    color:#fff;
+    padding:10px 14px 10px 18px;
+    border-radius:999px;
+    font-size:0.85rem;
+    opacity:0;
+    transition:all .3s;
+    z-index:11;
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .undo-toast.show{
+    opacity:1;
+    transform:translateX(-50%) translateY(0);
+  }
+  .undo-toast button{
+    background:#fff;
+    color:var(--danger);
+    border:none;
+    padding:5px 12px;
+    border-radius:999px;
+    font-family:inherit;
+    font-size:0.8rem;
+    cursor:pointer;
+  }
+  @media (max-width:600px){
+    #mainApp table, #mainApp thead, #mainApp tbody, #mainApp th, #mainApp td, #mainApp tr{display:block;}
+    #mainApp thead{display:none;}
+    #mainApp tbody tr{
+      background:var(--card);
+      margin:0 auto 10px;
+      border-radius:10px;
+      padding:10px 14px;
+      box-shadow:0 1px 3px rgba(0,0,0,0.05);
+      max-width:760px;
+      position:relative;
+    }
+    #mainApp tbody td{
+      border:none;
+      padding:4px 0;
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+    }
+    #mainApp tbody td::before{
+      content:attr(data-label);
+      color:var(--muted);
+      font-size:0.75rem;
+      text-transform:uppercase;
+      letter-spacing:0.03em;
+    }
+    .toolbar{padding:0 4px;}
+  }
+  @media print{
+    #mainApp{display:none !important;}
+    #reportView{display:block !important;}
+    #reportViewAlpha{display:block !important; page-break-before:always;}
+    .no-print{display:none !important;}
+  }
+  #reportView, #reportViewAlpha{
+    display:none;
+    max-width:760px;
+    margin:0 auto;
+    background:#fff;
+    padding:20px;
+  }
+  #reportView:target, #reportViewAlpha:target{
+    display:block;
+  }
+  #reportView h2, #reportViewAlpha h2{
+    text-align:center;
+    color:var(--accent-dark);
+    margin-bottom:2px;
+  }
+  #reportView .report-date, #reportViewAlpha .report-date{
+    text-align:center;
+    color:var(--muted);
+    font-size:0.85rem;
+    margin-bottom:18px;
+  }
+  #reportView table, #reportViewAlpha table{
+    box-shadow:none;
+    border:1px solid var(--line);
+  }
+  #reportView thead th, #reportViewAlpha thead th{
+    position:static;
+    cursor:default;
+  }
+  .report-actions{
+    max-width:760px;
+    margin:0 auto 16px;
+    display:flex;
+    gap:8px;
+    justify-content:center;
+  }
+  .report-hint{
+    max-width:760px;
+    margin:0 auto 16px;
+    text-align:center;
+    color:var(--muted);
+    font-size:0.82rem;
+    padding:0 10px;
+  }
+</style>
+</head>
+<body>
+
+<div id="mainApp">
+<h1>Marcação de Roupa</h1>
+<div class="subtitle">Toque em qualquer campo para editar</div>
+
+<div class="controls">
+  <div class="search-row">
+    <input type="text" id="search" placeholder="Pesquisar por quarto, nome, nº cliente ou marcação...">
+  </div>
+  <div class="filters">
+    <span class="chip active" data-piso="todos">Todos os pisos</span>
+    <span class="chip" data-piso="1º">1º Piso</span>
+    <span class="chip" data-piso="2º">2º Piso</span>
+    <span class="chip" data-only-filled="1">Só com residente</span>
+  </div>
+</div>
+
+<div class="toolbar">
+  <div class="count" id="count"></div>
+  <div style="display:flex; gap:8px;">
+    <button class="btn secondary" id="addRow">+ Novo quarto</button>
+    <a href="#reportView" class="btn secondary" style="text-decoration:none; display:inline-flex; align-items:center;">Relatório (Nº Cliente)</a>
+    <a href="#reportViewAlpha" class="btn secondary" style="text-decoration:none; display:inline-flex; align-items:center;">Relatório (Nome)</a>
+    <button class="btn danger" id="resetData">Repor original</button>
+  </div>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th data-key="quarto">Quarto ▾</th>
+      <th data-key="nome">Nome</th>
+      <th data-key="cliente">Nº Cliente</th>
+      <th data-key="outra">Outra Marcação</th>
+      <th data-key="piso">Piso</th>
+      <th class="no-sort"></th>
+    </tr>
+  </thead>
+  <tbody id="tbody"></tbody>
+</table>
+<div class="no-results" id="noResults" style="display:none;">Nenhum resultado encontrado.</div>
+</div>
+
+<div id="reportView">
+  <div class="report-actions no-print">
+    <a href="#" class="btn secondary" style="text-decoration:none; display:inline-flex; align-items:center;">Voltar</a>
+  </div>
+  <div class="report-hint no-print">
+    Para guardar em PDF: pré-visualiza este ficheiro na app Ficheiros, toca em partilhar e escolhe "Guardar como PDF".
+  </div>
+  <h2>Relatório de Marcação de Roupa</h2>
+  <div class="report-date" id="reportDate">Ordenado por número de cliente — 79 registos</div>
+  <table>
+    <thead>
+      <tr>
+        <th>Nº Cliente</th>
+        <th>Nome</th>
+        <th>Quarto</th>
+        <th>Piso</th>
+      </tr>
+    </thead>
+    <tbody id="reportTbody">
+      <tr><td>3045</td><td>Zulmira Palaio</td><td>63-2</td><td>1º</td></tr>
+      <tr><td>3191</td><td>Mª. da Gloria Maia</td><td>60-3</td><td>1º</td></tr>
+      <tr><td>3193</td><td>Fernanda Galinha Pereira</td><td>62-2</td><td>1º</td></tr>
+      <tr><td>3201</td><td>Mario Santos</td><td>76-3</td><td>2º</td></tr>
+      <tr><td>3563</td><td>Jose Saraiva</td><td>58-2</td><td>1º</td></tr>
+      <tr><td>3810</td><td>Joaquim Pedro</td><td>76-2</td><td>2º</td></tr>
+      <tr><td>4390</td><td>Herminio Gaspar</td><td>78-2</td><td>2º</td></tr>
+      <tr><td>5043</td><td>Mª. Alice Pais</td><td>59-1</td><td>1º</td></tr>
+      <tr><td>5191</td><td>Acacio Baçao</td><td>75-1</td><td>2º</td></tr>
+      <tr><td>5258</td><td>Clara Bocage</td><td>80-2</td><td>2º</td></tr>
+      <tr><td>5565</td><td>Idalina Madeira Silva</td><td>61-1</td><td>1º</td></tr>
+      <tr><td>5722</td><td>Damasia Pimenta</td><td>81-1</td><td>2º</td></tr>
+      <tr><td>5986</td><td>Oscar Nazare</td><td>57-1</td><td>1º</td></tr>
+      <tr><td>6243</td><td>Aida Teixeira</td><td>80-1</td><td>2º</td></tr>
+      <tr><td>6273</td><td>Mª. Isabel Godinho</td><td>83-2</td><td>2º</td></tr>
+      <tr><td>6343</td><td>Jose Pontes</td><td>78-1</td><td>2º</td></tr>
+      <tr><td>6442</td><td>Lucilia Oliveira</td><td>74-1</td><td>2º</td></tr>
+      <tr><td>6482</td><td>Luiza Costa Pinto</td><td>62-1</td><td>1º</td></tr>
+      <tr><td>6508</td><td>Mª. Rosa Andre</td><td>63-1</td><td>1º</td></tr>
+      <tr><td>6557</td><td>Beatriz Simoes</td><td>71-1</td><td>2º</td></tr>
+      <tr><td>6581</td><td>Fernando Rodrigues</td><td>58-1</td><td>1º</td></tr>
+      <tr><td>6593</td><td>Gracinda Fachada</td><td>53-2</td><td>1º</td></tr>
+      <tr><td>6595</td><td>Mª. da Conceiçao Soares</td><td>74-2</td><td>2º</td></tr>
+      <tr><td>6599</td><td>Adelaide Chagas</td><td>60-2</td><td>1º</td></tr>
+      <tr><td>6606</td><td>Jesuina Pereira</td><td>59-2</td><td>1º</td></tr>
+      <tr><td>6608</td><td>Isaurinda Seco</td><td>82-2</td><td>2º</td></tr>
+      <tr><td>6609</td><td>Isaura Neves</td><td>79-1</td><td>2º</td></tr>
+      <tr><td>6675</td><td>Antonio Bernardino</td><td>78-3</td><td>2º</td></tr>
+      <tr><td>6901</td><td>Jose Mariano</td><td>76-1</td><td>2º</td></tr>
+      <tr><td>6923</td><td>Edite Esteves</td><td>68-2</td><td>1º</td></tr>
+      <tr><td>6930</td><td>Olga Parrilha</td><td>68-1</td><td>1º</td></tr>
+      <tr><td>6939</td><td>Jose Henriques</td><td>65-1</td><td>1º</td></tr>
+      <tr><td>6940</td><td>Mª. de Lurdes Venancio</td><td>65-2</td><td>1º</td></tr>
+      <tr><td>6964</td><td>Giorgina Pimenta</td><td>54-1</td><td>1º</td></tr>
+      <tr><td>6965</td><td>Mª. Olinda Leitao</td><td>81-2</td><td>2º</td></tr>
+      <tr><td>6985</td><td>Deolinda Inacio</td><td>77-1</td><td>2º</td></tr>
+      <tr><td>6990</td><td>Isilda Cruz</td><td>56-1</td><td>1º</td></tr>
+      <tr><td>6993</td><td>Mª. Isabel Correia</td><td>80-3</td><td>2º</td></tr>
+      <tr><td>6994</td><td>Mª. Odete Neves</td><td>60-1</td><td>1º</td></tr>
+      <tr><td>7005</td><td>Mª. Isabel Alhau</td><td>55-1</td><td>1º</td></tr>
+      <tr><td>7009</td><td>Mª. da Nazare Varandas</td><td>61-2</td><td>1º</td></tr>
+      <tr><td>7017</td><td>Lucinda Correia</td><td>66-1</td><td>1º</td></tr>
+      <tr><td>7018</td><td>Mª. de Lurdes Pereira</td><td>67-1</td><td>1º</td></tr>
+      <tr><td>7022</td><td>Lucilia Fernandes</td><td>73-1</td><td>2º</td></tr>
+      <tr><td>7035</td><td>Raquel Prata</td><td>82-1</td><td>2º</td></tr>
+      <tr><td>7042</td><td>Giorgina Santos</td><td>73-2</td><td>2º</td></tr>
+      <tr><td>7047</td><td>Aida Diogo</td><td>77-2</td><td>2º</td></tr>
+      <tr><td>7063</td><td>Mª. Fernanda Mendes</td><td>66-2</td><td>1º</td></tr>
+      <tr><td>7304</td><td>Alice C</td><td>56-3</td><td>1º</td></tr>
+      <tr><td>7312</td><td>Aida Diniz</td><td>82-3</td><td>2º</td></tr>
+      <tr><td>7315</td><td>Manuela Oliveira</td><td>67-2</td><td>1º</td></tr>
+      <tr><td>7341</td><td>Mª. Dias Emilia</td><td>55-2</td><td>1º</td></tr>
+      <tr><td>7359</td><td>Mª. Matilde Monteiro</td><td>64-2</td><td>1º</td></tr>
+      <tr><td>7372</td><td>Mª. Alice Ferreira</td><td>64-1</td><td>1º</td></tr>
+      <tr><td>7387</td><td>Joaquim Mil Homens</td><td>52-1</td><td>1º</td></tr>
+      <tr><td>7392</td><td>Mª. Tereza Cunha</td><td>84-1</td><td>2º</td></tr>
+      <tr><td>7412</td><td>Augusta</td><td>79-2</td><td>2º</td></tr>
+      <tr><td>7430</td><td>Aurelio</td><td>72-1</td><td>2º</td></tr>
+      <tr><td>7441</td><td>Olivia Antunes</td><td>62-3</td><td>1º</td></tr>
+      <tr><td>7445</td><td>Jose Querido</td><td>57-2</td><td>1º</td></tr>
+      <tr><td>7487</td><td>Berryl Simoes</td><td>72-2</td><td>2º</td></tr>
+      <tr><td>7489</td><td>Mª. da Luz Zeferino</td><td>51-1</td><td>1º</td></tr>
+      <tr><td>7508</td><td>Ilda Brito</td><td>53-1</td><td>1º</td></tr>
+      <tr><td>7521</td><td>Mª. Antonieta Gouveia</td><td>54-2</td><td>1º</td></tr>
+      <tr><td>7694</td><td>Mª. dos Prazeres Jesus</td><td>83-1</td><td>2º</td></tr>
+      <tr><td>7851</td><td>Mª. Manuela Esteves</td><td>50-2</td><td>1º</td></tr>
+      <tr><td>7852</td><td>David Esteves</td><td>50-1</td><td>1º</td></tr>
+      <tr><td>7858</td><td>Furtunata Cioga</td><td>84-2</td><td>2º</td></tr>
+      <tr><td>7865</td><td>Jose Caçao</td><td>58-3</td><td>1º</td></tr>
+      <tr><td>7886</td><td>Durvalina Fernandes</td><td>56-2</td><td>1º</td></tr>
+      <tr><td>—</td><td>—</td><td>70-1</td><td>2º</td></tr>
+      <tr><td>—</td><td>—</td><td>75-2</td><td>2º</td></tr>
+      <tr><td>—</td><td>—</td><td>85-1</td><td>2º</td></tr>
+      <tr><td>—</td><td>—</td><td>85-2</td><td>2º</td></tr>
+      <tr><td>—</td><td>—</td><td>86-1</td><td>2º</td></tr>
+      <tr><td>—</td><td>—</td><td>86-2</td><td>2º</td></tr>
+      <tr><td>—</td><td>—</td><td>87-1</td><td>2º</td></tr>
+      <tr><td>—</td><td>—</td><td>87-2</td><td>2º</td></tr>
+      <tr><td>—</td><td>—</td><td>88-1</td><td>2º</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div id="reportViewAlpha">
+  <div class="report-actions no-print">
+    <a href="#" class="btn secondary" style="text-decoration:none; display:inline-flex; align-items:center;">Voltar</a>
+  </div>
+  <div class="report-hint no-print">
+    Para guardar em PDF: pré-visualiza este ficheiro na app Ficheiros, toca em partilhar e escolhe "Guardar como PDF".
+  </div>
+  <h2>Relatório de Marcação de Roupa</h2>
+  <div class="report-date" id="reportDateAlpha">Ordenado por ordem alfabética — 79 registos</div>
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Nº Cliente</th>
+        <th>Quarto</th>
+        <th>Piso</th>
+        <th>Outra Marcação</th>
+      </tr>
+    </thead>
+    <tbody id="reportTbodyAlpha">
+      <tr><td>Acacio Baçao</td><td>5191</td><td>75-1</td><td>2º</td><td>—</td></tr>
+      <tr><td>Adelaide Chagas</td><td>6599</td><td>60-2</td><td>1º</td><td>47</td></tr>
+      <tr><td>Aida Diniz</td><td>7312</td><td>82-3</td><td>2º</td><td>AD</td></tr>
+      <tr><td>Aida Diogo</td><td>7047</td><td>77-2</td><td>2º</td><td>—</td></tr>
+      <tr><td>Aida Teixeira</td><td>6243</td><td>80-1</td><td>2º</td><td>—</td></tr>
+      <tr><td>Alice C</td><td>7304</td><td>56-3</td><td>1º</td><td>—</td></tr>
+      <tr><td>Antonio Bernardino</td><td>6675</td><td>78-3</td><td>2º</td><td>888</td></tr>
+      <tr><td>Aurelio</td><td>7430</td><td>72-1</td><td>2º</td><td>—</td></tr>
+      <tr><td>Augusta</td><td>7412</td><td>79-2</td><td>2º</td><td>—</td></tr>
+      <tr><td>Beatriz Simoes</td><td>6557</td><td>71-1</td><td>2º</td><td>—</td></tr>
+      <tr><td>Berryl Simoes</td><td>7487</td><td>72-2</td><td>2º</td><td>BS</td></tr>
+      <tr><td>Clara Bocage</td><td>5258</td><td>80-2</td><td>2º</td><td>—</td></tr>
+      <tr><td>Damasia Pimenta</td><td>5722</td><td>81-1</td><td>2º</td><td>—</td></tr>
+      <tr><td>David Esteves</td><td>7852</td><td>50-1</td><td>1º</td><td>—</td></tr>
+      <tr><td>Deolinda Inacio</td><td>6985</td><td>77-1</td><td>2º</td><td>—</td></tr>
+      <tr><td>Durvalina Fernandes</td><td>7886</td><td>56-2</td><td>1º</td><td>5</td></tr>
+      <tr><td>Edite Esteves</td><td>6923</td><td>68-2</td><td>1º</td><td>4</td></tr>
+      <tr><td>Fernanda Galinha Pereira</td><td>3193</td><td>62-2</td><td>1º</td><td>19</td></tr>
+      <tr><td>Fernando Rodrigues</td><td>6581</td><td>58-1</td><td>1º</td><td>—</td></tr>
+      <tr><td>Furtunata Cioga</td><td>7858</td><td>84-2</td><td>2º</td><td>—</td></tr>
+      <tr><td>Giorgina Pimenta</td><td>6964</td><td>54-1</td><td>1º</td><td>C104  / 712</td></tr>
+      <tr><td>Giorgina Santos</td><td>7042</td><td>73-2</td><td>2º</td><td>1011</td></tr>
+      <tr><td>Gracinda Fachada</td><td>6593</td><td>53-2</td><td>1º</td><td>—</td></tr>
+      <tr><td>Herminio Gaspar</td><td>4390</td><td>78-2</td><td>2º</td><td>—</td></tr>
+      <tr><td>Idalina Madeira Silva</td><td>5565</td><td>61-1</td><td>1º</td><td>—</td></tr>
+      <tr><td>Ilda Brito</td><td>7508</td><td>53-1</td><td>1º</td><td>064</td></tr>
+      <tr><td>Isaura Neves</td><td>6609</td><td>79-1</td><td>2º</td><td>125</td></tr>
+      <tr><td>Isaurinda Seco</td><td>6608</td><td>82-2</td><td>2º</td><td>IS</td></tr>
+      <tr><td>Isilda Cruz</td><td>6990</td><td>56-1</td><td>1º</td><td>—</td></tr>
+      <tr><td>Jesuina Pereira</td><td>6606</td><td>59-2</td><td>1º</td><td>8</td></tr>
+      <tr><td>Joaquim Mil Homens</td><td>7387</td><td>52-1</td><td>1º</td><td>—</td></tr>
+      <tr><td>Joaquim Pedro</td><td>3810</td><td>76-2</td><td>2º</td><td>—</td></tr>
+      <tr><td>Jose Caçao</td><td>7865</td><td>58-3</td><td>1º</td><td>JC</td></tr>
+      <tr><td>Jose Henriques</td><td>6939</td><td>65-1</td><td>1º</td><td>—</td></tr>
+      <tr><td>Jose Mariano</td><td>6901</td><td>76-1</td><td>2º</td><td>—</td></tr>
+      <tr><td>Jose Pontes</td><td>6343</td><td>78-1</td><td>2º</td><td>—</td></tr>
+      <tr><td>Jose Querido</td><td>7445</td><td>57-2</td><td>1º</td><td>1260</td></tr>
+      <tr><td>Jose Saraiva</td><td>3563</td><td>58-2</td><td>1º</td><td>328</td></tr>
+      <tr><td>Lucilia Fernandes</td><td>7022</td><td>73-1</td><td>2º</td><td>—</td></tr>
+      <tr><td>Lucilia Oliveira</td><td>6442</td><td>74-1</td><td>2º</td><td>44 / LO</td></tr>
+      <tr><td>Lucinda Correia</td><td>7017</td><td>66-1</td><td>1º</td><td>106</td></tr>
+      <tr><td>Luiza Costa Pinto</td><td>6482</td><td>62-1</td><td>1º</td><td>6842</td></tr>
+      <tr><td>Manuela Oliveira</td><td>7315</td><td>67-2</td><td>1º</td><td>—</td></tr>
+      <tr><td>Mario Santos</td><td>3201</td><td>76-3</td><td>2º</td><td>—</td></tr>
+      <tr><td>Mª. Alice Ferreira</td><td>7372</td><td>64-1</td><td>1º</td><td>—</td></tr>
+      <tr><td>Mª. Alice Pais</td><td>5043</td><td>59-1</td><td>1º</td><td>—</td></tr>
+      <tr><td>Mª. Antonieta Gouveia</td><td>7521</td><td>54-2</td><td>1º</td><td>—</td></tr>
+      <tr><td>Mª. da Conceiçao Soares</td><td>6595</td><td>74-2</td><td>2º</td><td>1052</td></tr>
+      <tr><td>Mª. da Gloria Maia</td><td>3191</td><td>60-3</td><td>1º</td><td>14</td></tr>
+      <tr><td>Mª. da Luz Zeferino</td><td>7489</td><td>51-1</td><td>1º</td><td>—</td></tr>
+      <tr><td>Mª. da Nazare Varandas</td><td>7009</td><td>61-2</td><td>1º</td><td>297</td></tr>
+      <tr><td>Mª. de Lurdes Pereira</td><td>7018</td><td>67-1</td><td>1º</td><td>—</td></tr>
+      <tr><td>Mª. de Lurdes Venancio</td><td>6940</td><td>65-2</td><td>1º</td><td>—</td></tr>
+      <tr><td>Mª. Dias Emilia</td><td>7341</td><td>55-2</td><td>1º</td><td>—</td></tr>
+      <tr><td>Mª. dos Prazeres Jesus</td><td>7694</td><td>83-1</td><td>2º</td><td>—</td></tr>
+      <tr><td>Mª. Fernanda Mendes</td><td>7063</td><td>66-2</td><td>1º</td><td>999</td></tr>
+      <tr><td>Mª. Isabel Alhau</td><td>7005</td><td>55-1</td><td>1º</td><td>—</td></tr>
+      <tr><td>Mª. Isabel Correia</td><td>6993</td><td>80-3</td><td>2º</td><td>—</td></tr>
+      <tr><td>Mª. Isabel Godinho</td><td>6273</td><td>83-2</td><td>2º</td><td>IG</td></tr>
+      <tr><td>Mª. Manuela Esteves</td><td>7851</td><td>50-2</td><td>1º</td><td>—</td></tr>
+      <tr><td>Mª. Matilde Monteiro</td><td>7359</td><td>64-2</td><td>1º</td><td>—</td></tr>
+      <tr><td>Mª. Odete Neves</td><td>6994</td><td>60-1</td><td>1º</td><td>48</td></tr>
+      <tr><td>Mª. Olinda Leitao</td><td>6965</td><td>81-2</td><td>2º</td><td>BM5191</td></tr>
+      <tr><td>Mª. Rosa Andre</td><td>6508</td><td>63-1</td><td>1º</td><td>1983</td></tr>
+      <tr><td>Mª. Tereza Cunha</td><td>7392</td><td>84-1</td><td>2º</td><td>1231 / 1290 / Linha Verde</td></tr>
+      <tr><td>Olga Parrilha</td><td>6930</td><td>68-1</td><td>1º</td><td>—</td></tr>
+      <tr><td>Olivia Antunes</td><td>7441</td><td>62-3</td><td>1º</td><td>1245</td></tr>
+      <tr><td>Oscar Nazare</td><td>5986</td><td>57-1</td><td>1º</td><td>—</td></tr>
+      <tr><td>Raquel Prata</td><td>7035</td><td>82-1</td><td>2º</td><td>—</td></tr>
+      <tr><td>Zulmira Palaio</td><td>3045</td><td>63-2</td><td>1º</td><td>—</td></tr>
+      <tr><td>—</td><td>—</td><td>70-1</td><td>2º</td><td>—</td></tr>
+      <tr><td>—</td><td>—</td><td>75-2</td><td>2º</td><td>—</td></tr>
+      <tr><td>—</td><td>—</td><td>85-1</td><td>2º</td><td>—</td></tr>
+      <tr><td>—</td><td>—</td><td>85-2</td><td>2º</td><td>—</td></tr>
+      <tr><td>—</td><td>—</td><td>86-1</td><td>2º</td><td>—</td></tr>
+      <tr><td>—</td><td>—</td><td>86-2</td><td>2º</td><td>—</td></tr>
+      <tr><td>—</td><td>—</td><td>87-1</td><td>2º</td><td>—</td></tr>
+      <tr><td>—</td><td>—</td><td>87-2</td><td>2º</td><td>—</td></tr>
+      <tr><td>—</td><td>—</td><td>88-1</td><td>2º</td><td>—</td></tr>
+    </tbody>
+  </table>
+</div>
+<div class="save-indicator" id="saveIndicator">Guardado</div>
+<div class="undo-toast" id="undoToast">
+  <span id="undoText">Quarto removido</span>
+  <button id="undoBtn">Desfazer</button>
+</div>
+
+<script>
+const ORIGINAL_DATA = [{"quarto": "50-1", "nome": "David Esteves", "cliente": "7852", "outra": "", "piso": "1º"}, {"quarto": "50-2", "nome": "Mª. Manuela Esteves", "cliente": "7851", "outra": "", "piso": "1º"}, {"quarto": "51-1", "nome": "Mª. da Luz Zeferino", "cliente": "7489", "outra": "", "piso": "1º"}, {"quarto": "52-1", "nome": "Joaquim Mil Homens", "cliente": "7387", "outra": "", "piso": "1º"}, {"quarto": "53-1", "nome": "Ilda Brito", "cliente": "7508", "outra": "064", "piso": "1º"}, {"quarto": "53-2", "nome": "Gracinda Fachada", "cliente": "6593", "outra": "", "piso": "1º"}, {"quarto": "54-1", "nome": "Giorgina Pimenta", "cliente": "6964", "outra": "C104  / 712", "piso": "1º"}, {"quarto": "54-2", "nome": "Mª. Antonieta Gouveia", "cliente": "7521", "outra": "", "piso": "1º"}, {"quarto": "55-1", "nome": "Mª. Isabel Alhau", "cliente": "7005", "outra": "", "piso": "1º"}, {"quarto": "55-2", "nome": "Mª. Dias Emilia", "cliente": "7341", "outra": "", "piso": "1º"}, {"quarto": "56-1", "nome": "Isilda Cruz", "cliente": "6990", "outra": "", "piso": "1º"}, {"quarto": "56-2", "nome": "Durvalina Fernandes", "cliente": "7886", "outra": "5", "piso": "1º"}, {"quarto": "56-3", "nome": "Alice C", "cliente": "7304", "outra": "", "piso": "1º"}, {"quarto": "57-1", "nome": "Oscar Nazare", "cliente": "5986", "outra": "", "piso": "1º"}, {"quarto": "57-2", "nome": "Jose Querido", "cliente": "7445", "outra": "1260", "piso": "1º"}, {"quarto": "58-1", "nome": "Fernando Rodrigues", "cliente": "6581", "outra": "", "piso": "1º"}, {"quarto": "58-2", "nome": "Jose Saraiva", "cliente": "3563", "outra": "328", "piso": "1º"}, {"quarto": "58-3", "nome": "Jose Caçao", "cliente": "7865", "outra": "JC", "piso": "1º"}, {"quarto": "59-1", "nome": "Mª. Alice Pais", "cliente": "5043", "outra": "", "piso": "1º"}, {"quarto": "59-2", "nome": "Jesuina Pereira", "cliente": "6606", "outra": "8", "piso": "1º"}, {"quarto": "60-1", "nome": "Mª. Odete Neves", "cliente": "6994", "outra": "48", "piso": "1º"}, {"quarto": "60-2", "nome": "Adelaide Chagas", "cliente": "6599", "outra": "47", "piso": "1º"}, {"quarto": "60-3", "nome": "Mª. da Gloria Maia", "cliente": "3191", "outra": "14", "piso": "1º"}, {"quarto": "61-1", "nome": "Idalina Madeira Silva", "cliente": "5565", "outra": "", "piso": "1º"}, {"quarto": "61-2", "nome": "Mª. da Nazare Varandas", "cliente": "7009", "outra": "297", "piso": "1º"}, {"quarto": "62-1", "nome": "Luiza Costa Pinto", "cliente": "6482", "outra": "6842", "piso": "1º"}, {"quarto": "62-2", "nome": "Fernanda Galinha Pereira", "cliente": "3193", "outra": "19", "piso": "1º"}, {"quarto": "62-3", "nome": "Olivia Antunes", "cliente": "7441", "outra": "1245", "piso": "1º"}, {"quarto": "63-1", "nome": "Mª. Rosa Andre", "cliente": "6508", "outra": "1983", "piso": "1º"}, {"quarto": "63-2", "nome": "Zulmira Palaio", "cliente": "3045", "outra": "", "piso": "1º"}, {"quarto": "64-1", "nome": "Mª. Alice Ferreira", "cliente": "7372", "outra": "", "piso": "1º"}, {"quarto": "64-2", "nome": "Mª. Matilde Monteiro", "cliente": "7359", "outra": "", "piso": "1º"}, {"quarto": "65-1", "nome": "Jose Henriques", "cliente": "6939", "outra": "", "piso": "1º"}, {"quarto": "65-2", "nome": "Mª. de Lurdes Venancio", "cliente": "6940", "outra": "", "piso": "1º"}, {"quarto": "66-1", "nome": "Lucinda Correia", "cliente": "7017", "outra": "106", "piso": "1º"}, {"quarto": "66-2", "nome": "Mª. Fernanda Mendes", "cliente": "7063", "outra": "999", "piso": "1º"}, {"quarto": "67-1", "nome": "Mª. de Lurdes Pereira", "cliente": "7018", "outra": "", "piso": "1º"}, {"quarto": "67-2", "nome": "Manuela Oliveira", "cliente": "7315", "outra": "", "piso": "1º"}, {"quarto": "68-1", "nome": "Olga Parrilha", "cliente": "6930", "outra": "", "piso": "1º"}, {"quarto": "68-2", "nome": "Edite Esteves", "cliente": "6923", "outra": "4", "piso": "1º"}, {"quarto": "70-1", "nome": "", "cliente": "", "outra": "", "piso": "2º"}, {"quarto": "71-1", "nome": "Beatriz Simoes", "cliente": "6557", "outra": "", "piso": "2º"}, {"quarto": "72-1", "nome": "Aurelio", "cliente": "7430", "outra": "", "piso": "2º"}, {"quarto": "72-2", "nome": "Berryl Simoes", "cliente": "7487", "outra": "BS", "piso": "2º"}, {"quarto": "73-1", "nome": "Lucilia Fernandes", "cliente": "7022", "outra": "", "piso": "2º"}, {"quarto": "73-2", "nome": "Giorgina Santos", "cliente": "7042", "outra": "1011", "piso": "2º"}, {"quarto": "74-1", "nome": "Lucilia Oliveira", "cliente": "6442", "outra": "44 / LO", "piso": "2º"}, {"quarto": "74-2", "nome": "Mª. da Conceiçao Soares", "cliente": "6595", "outra": "1052", "piso": "2º"}, {"quarto": "75-1", "nome": "Acacio Baçao", "cliente": "5191", "outra": "", "piso": "2º"}, {"quarto": "75-2", "nome": "", "cliente": "", "outra": "", "piso": "2º"}, {"quarto": "76-1", "nome": "Jose Mariano", "cliente": "6901", "outra": "", "piso": "2º"}, {"quarto": "76-2", "nome": "Joaquim Pedro", "cliente": "3810", "outra": "", "piso": "2º"}, {"quarto": "76-3", "nome": "Mario Santos", "cliente": "3201", "outra": "", "piso": "2º"}, {"quarto": "77-1", "nome": "Deolinda Inacio", "cliente": "6985", "outra": "", "piso": "2º"}, {"quarto": "77-2", "nome": "Aida Diogo", "cliente": "7047", "outra": "", "piso": "2º"}, {"quarto": "78-1", "nome": "Jose Pontes", "cliente": "6343", "outra": "", "piso": "2º"}, {"quarto": "78-2", "nome": "Herminio Gaspar", "cliente": "4390", "outra": "", "piso": "2º"}, {"quarto": "78-3", "nome": "Antonio Bernardino", "cliente": "6675", "outra": "888", "piso": "2º"}, {"quarto": "79-1", "nome": "Isaura Neves", "cliente": "6609", "outra": "125", "piso": "2º"}, {"quarto": "79-2", "nome": "Augusta", "cliente": "7412", "outra": "", "piso": "2º"}, {"quarto": "80-1", "nome": "Aida Teixeira", "cliente": "6243", "outra": "", "piso": "2º"}, {"quarto": "80-2", "nome": "Clara Bocage", "cliente": "5258", "outra": "", "piso": "2º"}, {"quarto": "80-3", "nome": "Mª. Isabel Correia", "cliente": "6993", "outra": "", "piso": "2º"}, {"quarto": "81-1", "nome": "Damasia Pimenta", "cliente": "5722", "outra": "", "piso": "2º"}, {"quarto": "81-2", "nome": "Mª. Olinda Leitao", "cliente": "6965", "outra": "BM5191", "piso": "2º"}, {"quarto": "82-1", "nome": "Raquel Prata", "cliente": "7035", "outra": "", "piso": "2º"}, {"quarto": "82-2", "nome": "Isaurinda Seco", "cliente": "6608", "outra": "IS", "piso": "2º"}, {"quarto": "82-3", "nome": "Aida Diniz", "cliente": "7312", "outra": "AD", "piso": "2º"}, {"quarto": "83-1", "nome": "Mª. dos Prazeres Jesus", "cliente": "7694", "outra": "", "piso": "2º"}, {"quarto": "83-2", "nome": "Mª. Isabel Godinho", "cliente": "6273", "outra": "IG", "piso": "2º"}, {"quarto": "84-1", "nome": "Mª. Tereza Cunha", "cliente": "7392", "outra": "1231 / 1290 / Linha Verde", "piso": "2º"}, {"quarto": "84-2", "nome": "Furtunata Cioga", "cliente": "7858", "outra": "", "piso": "2º"}, {"quarto": "85-1", "nome": "", "cliente": "", "outra": "", "piso": "2º"}, {"quarto": "85-2", "nome": "", "cliente": "", "outra": "", "piso": "2º"}, {"quarto": "86-1", "nome": "", "cliente": "", "outra": "", "piso": "2º"}, {"quarto": "86-2", "nome": "", "cliente": "", "outra": "", "piso": "2º"}, {"quarto": "87-1", "nome": "", "cliente": "", "outra": "", "piso": "2º"}, {"quarto": "87-2", "nome": "", "cliente": "", "outra": "", "piso": "2º"}, {"quarto": "88-1", "nome": "", "cliente": "", "outra": "", "piso": "2º"}];
+
+const STORAGE_KEY = 'marcacao_roupa_dados';
+
+function loadData(){
+  try{
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if(raw) return JSON.parse(raw);
+  }catch(e){}
+  return JSON.parse(JSON.stringify(ORIGINAL_DATA));
+}
+
+function saveData(){
+  try{
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(DATA));
+    showSaved();
+  }catch(e){}
+}
+
+let DATA = loadData();
+let state = { search: '', piso: 'todos', onlyFilled: false, sortKey: 'quarto', sortDir: 1 };
+
+const tbody = document.getElementById('tbody');
+const countEl = document.getElementById('count');
+const noResults = document.getElementById('noResults');
+const table = document.querySelector('table');
+const saveIndicator = document.getElementById('saveIndicator');
+
+let saveTimeout;
+function showSaved(){
+  clearTimeout(saveTimeout);
+  saveIndicator.classList.add('show');
+  saveTimeout = setTimeout(()=>saveIndicator.classList.remove('show'), 1200);
+}
+
+const undoToast = document.getElementById('undoToast');
+const undoText = document.getElementById('undoText');
+const undoBtn = document.getElementById('undoBtn');
+let undoTimeout;
+let lastRemoved = null;
+
+function removeRow(idx, quarto){
+  lastRemoved = { item: DATA[idx], idx: idx };
+  DATA.splice(idx, 1);
+  saveData();
+  render();
+  undoText.textContent = `Quarto ${quarto} removido`;
+  undoToast.classList.add('show');
+  clearTimeout(undoTimeout);
+  undoTimeout = setTimeout(()=>undoToast.classList.remove('show'), 5000);
+}
+
+undoBtn.addEventListener('click', ()=>{
+  if(lastRemoved){
+    DATA.splice(lastRemoved.idx, 0, lastRemoved.item);
+    saveData();
+    render();
+    lastRemoved = null;
+  }
+  undoToast.classList.remove('show');
+  clearTimeout(undoTimeout);
+});
+
+function handleDeleteTap(e){
+  const delBtn = e.target.closest('.del-btn');
+  if(!delBtn) return;
+  e.preventDefault();
+  if(delBtn.dataset.busy === '1') return;
+  delBtn.dataset.busy = '1';
+  const tr = delBtn.closest('tr');
+  if(!tr) return;
+  const idx = parseInt(tr.dataset.idx, 10);
+  if(isNaN(idx) || !DATA[idx]) return;
+  removeRow(idx, DATA[idx].quarto);
+}
+tbody.addEventListener('click', handleDeleteTap);
+tbody.addEventListener('touchend', handleDeleteTap);
+
+function normalize(s){
+  return (s||'').toString().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+}
+
+function highlight(text, term){
+  text = text || '';
+  if(!term) return text;
+  const norm = normalize(text);
+  const idx = norm.indexOf(term);
+  if(idx === -1) return text;
+  return text.slice(0,idx) + '<mark>' + text.slice(idx, idx+term.length) + '</mark>' + text.slice(idx+term.length);
+}
+
+function naturalCompare(a, b){
+  return (a||'').toString().localeCompare((b||'').toString(), 'pt', {numeric:true, sensitivity:'base'});
+}
+
+function render(){
+  const term = normalize(state.search);
+  let rows = DATA.map((r, idx)=>({...r, _idx: idx})).filter(r=>{
+    if(state.piso !== 'todos' && r.piso !== state.piso) return false;
+    if(state.onlyFilled && !r.nome) return false;
+    if(term){
+      const hay = normalize(`${r.quarto} ${r.nome} ${r.cliente} ${r.outra}`);
+      if(!hay.includes(term)) return false;
+    }
+    return true;
+  });
+
+  if(state.sortKey){
+    rows.sort((a,b)=>{
+      if(a.quarto === 'novo' && b.quarto !== 'novo') return -1;
+      if(b.quarto === 'novo' && a.quarto !== 'novo') return 1;
+      return naturalCompare(a[state.sortKey], b[state.sortKey]) * state.sortDir;
+    });
+  }
+
+  tbody.innerHTML = '';
+  if(rows.length === 0){
+    table.style.display = 'none';
+    noResults.style.display = 'block';
+  } else {
+    table.style.display = '';
+    noResults.style.display = 'none';
+    for(const r of rows){
+      const tr = document.createElement('tr');
+      tr.className = r.piso === '1º' ? 'piso-1' : 'piso-2';
+      tr.dataset.idx = r._idx;
+
+      const tdQuarto = document.createElement('td');
+      tdQuarto.dataset.label = 'Quarto';
+      tdQuarto.contentEditable = 'true';
+      tdQuarto.dataset.field = 'quarto';
+      tdQuarto.innerHTML = highlight(r.quarto, term);
+
+      const tdNome = document.createElement('td');
+      tdNome.dataset.label = 'Nome';
+      tdNome.contentEditable = 'true';
+      tdNome.dataset.field = 'nome';
+      tdNome.innerHTML = r.nome ? highlight(r.nome, term) : '';
+      if(!r.nome) tdNome.classList.add('empty-name');
+
+      const tdCliente = document.createElement('td');
+      tdCliente.dataset.label = 'Nº Cliente';
+      tdCliente.contentEditable = 'true';
+      tdCliente.dataset.field = 'cliente';
+      tdCliente.innerHTML = r.cliente ? highlight(r.cliente.toString(), term) : '';
+
+      const tdOutra = document.createElement('td');
+      tdOutra.dataset.label = 'Outra Marcação';
+      tdOutra.contentEditable = 'true';
+      tdOutra.dataset.field = 'outra';
+      tdOutra.innerHTML = r.outra ? highlight(r.outra, term) : '';
+
+      const tdPiso = document.createElement('td');
+      tdPiso.dataset.label = 'Piso';
+      const sel = document.createElement('select');
+      sel.className = 'piso-badge';
+      sel.innerHTML = `<option value="1º"${r.piso==='1º'?' selected':''}>1º</option><option value="2º"${r.piso==='2º'?' selected':''}>2º</option>`;
+      sel.addEventListener('change', ()=>{
+        DATA[r._idx].piso = sel.value;
+        saveData();
+        render();
+      });
+      tdPiso.appendChild(sel);
+
+      const tdDel = document.createElement('td');
+      tdDel.dataset.label = '';
+      const delBtn = document.createElement('button');
+      delBtn.type = 'button';
+      delBtn.className = 'del-btn';
+      delBtn.innerHTML = '✕';
+      tdDel.appendChild(delBtn);
+
+      [tdQuarto, tdNome, tdCliente, tdOutra].forEach(td=>{
+        td.addEventListener('blur', ()=>{
+          const field = td.dataset.field;
+          const val = td.textContent.trim();
+          DATA[r._idx][field] = val;
+          saveData();
+          if(field === 'quarto'){
+            render();
+          } else if(field === 'nome'){
+            td.classList.toggle('empty-name', !val);
+          }
+        });
+        td.addEventListener('keydown', (e)=>{
+          if(e.key === 'Enter'){
+            e.preventDefault();
+            td.blur();
+          }
+        });
+      });
+
+      tr.appendChild(tdQuarto);
+      tr.appendChild(tdNome);
+      tr.appendChild(tdCliente);
+      tr.appendChild(tdOutra);
+      tr.appendChild(tdPiso);
+      tr.appendChild(tdDel);
+      tbody.appendChild(tr);
+    }
+  }
+  countEl.textContent = `${rows.length} registo${rows.length===1?'':'s'} encontrado${rows.length===1?'':'s'}`;
+  generateReport();
+  generateReportAlpha();
+}
+
+document.getElementById('search').addEventListener('input', e=>{
+  state.search = e.target.value;
+  render();
+});
+
+document.querySelectorAll('.chip[data-piso]').forEach(chip=>{
+  chip.addEventListener('click', ()=>{
+    document.querySelectorAll('.chip[data-piso]').forEach(c=>c.classList.remove('active'));
+    chip.classList.add('active');
+    state.piso = chip.dataset.piso;
+    render();
+  });
+});
+
+document.querySelector('.chip[data-only-filled]').addEventListener('click', function(){
+  state.onlyFilled = !state.onlyFilled;
+  this.classList.toggle('active', state.onlyFilled);
+  render();
+});
+
+document.querySelectorAll('thead th[data-key]').forEach(th=>{
+  th.addEventListener('click', ()=>{
+    const key = th.dataset.key;
+    if(state.sortKey === key){
+      state.sortDir *= -1;
+    } else {
+      state.sortKey = key;
+      state.sortDir = 1;
+    }
+    render();
+  });
+});
+
+function doAddRow(){
+  DATA.unshift({ quarto:'novo', nome:'', cliente:'', outra:'', piso:'1º' });
+  saveData();
+  state.search = '';
+  document.getElementById('search').value = '';
+  render();
+}
+
+function doResetData(btn){
+  if(btn.dataset.confirming === '1'){
+    DATA = JSON.parse(JSON.stringify(ORIGINAL_DATA));
+    saveData();
+    render();
+    btn.textContent = 'Repor original';
+    btn.dataset.confirming = '0';
+    clearTimeout(btn._resetTimeout);
+  } else {
+    btn.dataset.confirming = '1';
+    btn.textContent = 'Confirmar? (apaga tudo)';
+    btn._resetTimeout = setTimeout(()=>{
+      btn.dataset.confirming = '0';
+      btn.textContent = 'Repor original';
+    }, 4000);
+  }
+}
+
+function generateReport(){
+  const rows = DATA.filter(r => r.quarto).map(r=>({...r}));
+  rows.sort((a,b)=>{
+    const ca = parseInt((a.cliente||'').toString().replace(/\D/g,''), 10);
+    const cb = parseInt((b.cliente||'').toString().replace(/\D/g,''), 10);
+    const va = isNaN(ca) ? Infinity : ca;
+    const vb = isNaN(cb) ? Infinity : cb;
+    return va - vb;
+  });
+
+  const reportTbody = document.getElementById('reportTbody');
+  reportTbody.innerHTML = '';
+  for(const r of rows){
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${r.cliente || '—'}</td>
+      <td>${r.nome || '—'}</td>
+      <td>${r.quarto}</td>
+      <td>${r.piso}</td>
+    `;
+    reportTbody.appendChild(tr);
+  }
+
+  const now = new Date();
+  const dateStr = now.toLocaleDateString('pt-PT', {day:'2-digit', month:'2-digit', year:'numeric'});
+  const timeStr = now.toLocaleTimeString('pt-PT', {hour:'2-digit', minute:'2-digit'});
+  document.getElementById('reportDate').textContent = `Gerado em ${dateStr} às ${timeStr} — ${rows.length} registos`;
+}
+
+function generateReportAlpha(){
+  const rows = DATA.filter(r => r.quarto).map(r=>({...r}));
+  rows.sort((a,b)=>{
+    const na = normalize(a.nome || '');
+    const nb = normalize(b.nome || '');
+    if(na === '' && nb === '') return 0;
+    if(na === '') return 1;
+    if(nb === '') return -1;
+    return na.localeCompare(nb, 'pt');
+  });
+
+  const reportTbodyAlpha = document.getElementById('reportTbodyAlpha');
+  reportTbodyAlpha.innerHTML = '';
+  for(const r of rows){
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${r.nome || '—'}</td>
+      <td>${r.cliente || '—'}</td>
+      <td>${r.quarto}</td>
+      <td>${r.piso}</td>
+      <td>${r.outra || '—'}</td>
+    `;
+    reportTbodyAlpha.appendChild(tr);
+  }
+
+  const now = new Date();
+  const dateStr = now.toLocaleDateString('pt-PT', {day:'2-digit', month:'2-digit', year:'numeric'});
+  const timeStr = now.toLocaleTimeString('pt-PT', {hour:'2-digit', minute:'2-digit'});
+  document.getElementById('reportDateAlpha').textContent = `Gerado em ${dateStr} às ${timeStr} — ${rows.length} registos`;
+}
+
+function handleActionTap(e){
+  const btn = e.target.closest('button');
+  if(!btn || !btn.id) return;
+  if(btn.dataset.busy === '1') return;
+  btn.dataset.busy = '1';
+  setTimeout(()=>{ btn.dataset.busy = '0'; }, 300);
+  switch(btn.id){
+    case 'addRow': e.preventDefault(); doAddRow(); break;
+    case 'resetData': e.preventDefault(); doResetData(btn); break;
+  }
+}
+document.body.addEventListener('click', handleActionTap);
+document.body.addEventListener('touchend', handleActionTap);
+
+render();
+</script>
+</body>
+</html>
