@@ -345,6 +345,12 @@
     position:static;
     cursor:default;
   }
+  .report-footer{
+    text-align:center;
+    color:var(--muted);
+    font-size:0.78rem;
+    margin-top:16px;
+  }
   .report-actions{
     max-width:760px;
     margin:0 auto 16px;
@@ -434,7 +440,7 @@
     </a>
     <button class="btn" id="printBtn1">Imprimir</button>
   </div>
-  <h2>Relatório de Marcação de Roupa</h2>
+  <h2>FBS - Lavandaria</h2>
   <div class="report-date" id="reportDate">Ordenado por número de cliente — 80 registos</div>
   <table>
     <thead>
@@ -443,91 +449,93 @@
         <th>Nome</th>
         <th>Quarto</th>
         <th>Piso</th>
+        <th>Outra Marcação</th>
       </tr>
     </thead>
     <tbody id="reportTbody">
-      <tr><td>3045</td><td>Zulmira Palaio</td><td>63-2</td><td>1º</td></tr>
-      <tr><td>3191</td><td>Mª. da Gloria Maia</td><td>60-3</td><td>1º</td></tr>
-      <tr><td>3193</td><td>Fernanda Galinha Pereira</td><td>62-2</td><td>1º</td></tr>
-      <tr><td>3201</td><td>Mario Santos</td><td>76-3</td><td>2º</td></tr>
-      <tr><td>3563</td><td>Jose Saraiva</td><td>58-2</td><td>1º</td></tr>
-      <tr><td>3810</td><td>Joaquim Pedro</td><td>76-2</td><td>2º</td></tr>
-      <tr><td>5258</td><td>Clara Bocage</td><td>80-2</td><td>2º</td></tr>
-      <tr><td>5565</td><td>Idalina Madeira Silva</td><td>61-1</td><td>1º</td></tr>
-      <tr><td>6243</td><td>Aida Teixeira</td><td>80-1</td><td>2º</td></tr>
-      <tr><td>6273</td><td>Mª. Isabel Godinho</td><td>83-2</td><td>2º</td></tr>
-      <tr><td>6482</td><td>Luiza Costa Pinto</td><td>62-1</td><td>1º</td></tr>
-      <tr><td>6508</td><td>Mª. Rosa Andre</td><td>63-1</td><td>1º</td></tr>
-      <tr><td>6557</td><td>Beatriz Simoes</td><td>71-1</td><td>2º</td></tr>
-      <tr><td>6581</td><td>Fernando Rodrigues</td><td>58-1</td><td>1º</td></tr>
-      <tr><td>6593</td><td>Gracinda Fachada</td><td>53-2</td><td>1º</td></tr>
-      <tr><td>6599</td><td>Adelaide Chagas</td><td>60-2</td><td>1º</td></tr>
-      <tr><td>6606</td><td>Jesuina Pereira</td><td>59-2</td><td>1º</td></tr>
-      <tr><td>6609</td><td>Isaura Neves</td><td>79-1</td><td>2º</td></tr>
-      <tr><td>6675</td><td>Antonio Bernardino</td><td>78-3</td><td>2º</td></tr>
-      <tr><td>6901</td><td>Jose Mariano</td><td>76-1</td><td>2º</td></tr>
-      <tr><td>6923</td><td>Edite Esteves</td><td>68-2</td><td>1º</td></tr>
-      <tr><td>6930</td><td>Olga Parrilha</td><td>68-1</td><td>1º</td></tr>
-      <tr><td>6939</td><td>Jose Henriques</td><td>65-1</td><td>1º</td></tr>
-      <tr><td>6940</td><td>Mª. de Lurdes Venancio</td><td>65-2</td><td>1º</td></tr>
-      <tr><td>6990</td><td>Isilda Cruz</td><td>56-1</td><td>1º</td></tr>
-      <tr><td>6993</td><td>Mª. Isabel Correia</td><td>80-3</td><td>2º</td></tr>
-      <tr><td>6994</td><td>Mª. Odete Neves</td><td>60-1</td><td>1º</td></tr>
-      <tr><td>7005</td><td>Mª. Isabel Alhau</td><td>55-1</td><td>1º</td></tr>
-      <tr><td>7009</td><td>Mª. da Nazare Varandas</td><td>61-2</td><td>1º</td></tr>
-      <tr><td>7018</td><td>Mª. de Lurdes Pereira</td><td>67-1</td><td>1º</td></tr>
-      <tr><td>7022</td><td>Lucilia Fernandes</td><td>73-1</td><td>2º</td></tr>
-      <tr><td>7042</td><td>Giorgina Santos</td><td>73-2</td><td>2º</td></tr>
-      <tr><td>7047</td><td>Aida Diogo</td><td>77-2</td><td>2º</td></tr>
-      <tr><td>7304</td><td>Alice C</td><td>56-3</td><td>1º</td></tr>
-      <tr><td>7312</td><td>Aida Diniz</td><td>82-3</td><td>2º</td></tr>
-      <tr><td>7341</td><td>Mª. Dias Emilia</td><td>55-2</td><td>1º</td></tr>
-      <tr><td>7359</td><td>Mª. Matilde Monteiro</td><td>64-2</td><td>1º</td></tr>
-      <tr><td>7372</td><td>Alice Ferreira</td><td>67-2</td><td>1º</td></tr>
-      <tr><td>7387</td><td>Joaquim Mil Homens</td><td>52-1</td><td>1º</td></tr>
-      <tr><td>7392</td><td>Mª. Tereza Cunha</td><td>84-1</td><td>2º</td></tr>
-      <tr><td>7412</td><td>Augusta</td><td>79-2</td><td>2º</td></tr>
-      <tr><td>7441</td><td>Olivia Antunes</td><td>62-3</td><td>1º</td></tr>
-      <tr><td>7487</td><td>Berryl Simoes</td><td>81-1</td><td>2º</td></tr>
-      <tr><td>7489</td><td>Mª. da Luz Zeferino</td><td>51-1</td><td>1º</td></tr>
-      <tr><td>7508</td><td>Ilda Brito</td><td>53-1</td><td>1º</td></tr>
-      <tr><td>7694</td><td>Mª. dos Prazeres Jesus</td><td>83-1</td><td>2º</td></tr>
-      <tr><td>7851</td><td>Mª. Manuela Esteves</td><td>54-1</td><td>1º</td></tr>
-      <tr><td>7858</td><td>Furtunata Cioga</td><td>84-2</td><td>2º</td></tr>
-      <tr><td>7865</td><td>Jose Caçao</td><td>58-3</td><td>1º</td></tr>
-      <tr><td>7910</td><td>Suzete</td><td>51-2</td><td>1º</td></tr>
-      <tr><td>7986</td><td>Lurdes Simões</td><td>82-2</td><td>2º</td></tr>
-      <tr><td>7988</td><td>Alberto Serra</td><td>57-2</td><td>1º</td></tr>
-      <tr><td>7998</td><td>Ilda França</td><td>59-1</td><td>1º</td></tr>
-      <tr><td>8057</td><td>Pompilho Oliveira</td><td>57-1</td><td>1º</td></tr>
-      <tr><td>8145</td><td>Luísa Abreu</td><td>56-2</td><td>1º</td></tr>
-      <tr><td>8313</td><td>Lurdes Portugal Ferreira</td><td>70-1</td><td>2º</td></tr>
-      <tr><td>8325</td><td>Elisa Correia</td><td>54-2</td><td>1º</td></tr>
-      <tr><td>8355</td><td>Conceição Costa</td><td>64-1</td><td>1º</td></tr>
-      <tr><td>8356</td><td>Mª Armenia Agria</td><td>74-1</td><td>2º</td></tr>
-      <tr><td>8363</td><td>Germano</td><td>78-2</td><td>2º</td></tr>
-      <tr><td>8385</td><td>Mª Nazaré</td><td>77-1</td><td>2º</td></tr>
-      <tr><td>8407</td><td>Jose Serra</td><td>78-1</td><td>2º</td></tr>
-      <tr><td>—</td><td>José Alves</td><td>50-1</td><td>1º</td></tr>
-      <tr><td>—</td><td>—</td><td>50-2</td><td>1º</td></tr>
-      <tr><td>—</td><td>Célia Duarte</td><td>66-1</td><td>1º</td></tr>
-      <tr><td>—</td><td>—</td><td>66-2</td><td>1º</td></tr>
-      <tr><td>—</td><td>Laura Batista</td><td>72-1</td><td>2º</td></tr>
-      <tr><td>—</td><td>—</td><td>72-2</td><td>2º</td></tr>
-      <tr><td>—</td><td>—</td><td>74-2</td><td>2º</td></tr>
-      <tr><td>—</td><td>—</td><td>75-1</td><td>2º</td></tr>
-      <tr><td>—</td><td>—</td><td>75-2</td><td>2º</td></tr>
-      <tr><td>—</td><td>—</td><td>81-2</td><td>2º</td></tr>
-      <tr><td>—</td><td>Lucília Oliveira</td><td>82-1</td><td>2º</td></tr>
-      <tr><td>—</td><td>—</td><td>85-1</td><td>2º</td></tr>
-      <tr><td>—</td><td>—</td><td>85-2</td><td>2º</td></tr>
-      <tr><td>—</td><td>—</td><td>86-1</td><td>2º</td></tr>
-      <tr><td>—</td><td>—</td><td>86-2</td><td>2º</td></tr>
-      <tr><td>—</td><td>—</td><td>87-1</td><td>2º</td></tr>
-      <tr><td>—</td><td>—</td><td>87-2</td><td>2º</td></tr>
-      <tr><td>—</td><td>—</td><td>88-1</td><td>2º</td></tr>
+      <tr><td>3045</td><td>Zulmira Palaio</td><td>63-2</td><td>1º</td><td>—</td></tr>
+      <tr><td>3191</td><td>Mª. da Gloria Maia</td><td>60-3</td><td>1º</td><td>14</td></tr>
+      <tr><td>3193</td><td>Fernanda Galinha Pereira</td><td>62-2</td><td>1º</td><td>19</td></tr>
+      <tr><td>3201</td><td>Mario Santos</td><td>76-3</td><td>2º</td><td>—</td></tr>
+      <tr><td>3563</td><td>Jose Saraiva</td><td>58-2</td><td>1º</td><td>328</td></tr>
+      <tr><td>3810</td><td>Joaquim Pedro</td><td>76-2</td><td>2º</td><td>—</td></tr>
+      <tr><td>5258</td><td>Clara Bocage</td><td>80-2</td><td>2º</td><td>—</td></tr>
+      <tr><td>5565</td><td>Idalina Madeira Silva</td><td>61-1</td><td>1º</td><td>—</td></tr>
+      <tr><td>6243</td><td>Aida Teixeira</td><td>80-1</td><td>2º</td><td>—</td></tr>
+      <tr><td>6273</td><td>Mª. Isabel Godinho</td><td>83-2</td><td>2º</td><td>IG</td></tr>
+      <tr><td>6482</td><td>Luiza Costa Pinto</td><td>62-1</td><td>1º</td><td>6842</td></tr>
+      <tr><td>6508</td><td>Mª. Rosa Andre</td><td>63-1</td><td>1º</td><td>1983</td></tr>
+      <tr><td>6557</td><td>Beatriz Simoes</td><td>71-1</td><td>2º</td><td>—</td></tr>
+      <tr><td>6581</td><td>Fernando Rodrigues</td><td>58-1</td><td>1º</td><td>—</td></tr>
+      <tr><td>6593</td><td>Gracinda Fachada</td><td>53-2</td><td>1º</td><td>—</td></tr>
+      <tr><td>6599</td><td>Adelaide Chagas</td><td>60-2</td><td>1º</td><td>47</td></tr>
+      <tr><td>6606</td><td>Jesuina Pereira</td><td>59-2</td><td>1º</td><td>8</td></tr>
+      <tr><td>6609</td><td>Isaura Neves</td><td>79-1</td><td>2º</td><td>125</td></tr>
+      <tr><td>6675</td><td>Antonio Bernardino</td><td>78-3</td><td>2º</td><td>888</td></tr>
+      <tr><td>6901</td><td>Jose Mariano</td><td>76-1</td><td>2º</td><td>—</td></tr>
+      <tr><td>6923</td><td>Edite Esteves</td><td>68-2</td><td>1º</td><td>4</td></tr>
+      <tr><td>6930</td><td>Olga Parrilha</td><td>68-1</td><td>1º</td><td>—</td></tr>
+      <tr><td>6939</td><td>Jose Henriques</td><td>65-1</td><td>1º</td><td>—</td></tr>
+      <tr><td>6940</td><td>Mª. de Lurdes Venancio</td><td>65-2</td><td>1º</td><td>—</td></tr>
+      <tr><td>6990</td><td>Isilda Cruz</td><td>56-1</td><td>1º</td><td>—</td></tr>
+      <tr><td>6993</td><td>Mª. Isabel Correia</td><td>80-3</td><td>2º</td><td>—</td></tr>
+      <tr><td>6994</td><td>Mª. Odete Neves</td><td>60-1</td><td>1º</td><td>48</td></tr>
+      <tr><td>7005</td><td>Mª. Isabel Alhau</td><td>55-1</td><td>1º</td><td>—</td></tr>
+      <tr><td>7009</td><td>Mª. da Nazare Varandas</td><td>61-2</td><td>1º</td><td>297</td></tr>
+      <tr><td>7018</td><td>Mª. de Lurdes Pereira</td><td>67-1</td><td>1º</td><td>—</td></tr>
+      <tr><td>7022</td><td>Lucilia Fernandes</td><td>73-1</td><td>2º</td><td>—</td></tr>
+      <tr><td>7042</td><td>Giorgina Santos</td><td>73-2</td><td>2º</td><td>1011</td></tr>
+      <tr><td>7047</td><td>Aida Diogo</td><td>77-2</td><td>2º</td><td>—</td></tr>
+      <tr><td>7304</td><td>Alice C</td><td>56-3</td><td>1º</td><td>—</td></tr>
+      <tr><td>7312</td><td>Aida Diniz</td><td>82-3</td><td>2º</td><td>AD</td></tr>
+      <tr><td>7341</td><td>Mª. Dias Emilia</td><td>55-2</td><td>1º</td><td>—</td></tr>
+      <tr><td>7359</td><td>Mª. Matilde Monteiro</td><td>64-2</td><td>1º</td><td>—</td></tr>
+      <tr><td>7372</td><td>Alice Ferreira</td><td>67-2</td><td>1º</td><td>—</td></tr>
+      <tr><td>7387</td><td>Joaquim Mil Homens</td><td>52-1</td><td>1º</td><td>—</td></tr>
+      <tr><td>7392</td><td>Mª. Tereza Cunha</td><td>84-1</td><td>2º</td><td>1231 / 1290 / Linha Verde</td></tr>
+      <tr><td>7412</td><td>Augusta</td><td>79-2</td><td>2º</td><td>—</td></tr>
+      <tr><td>7441</td><td>Olivia Antunes</td><td>62-3</td><td>1º</td><td>1245</td></tr>
+      <tr><td>7487</td><td>Berryl Simoes</td><td>81-1</td><td>2º</td><td>BS</td></tr>
+      <tr><td>7489</td><td>Mª. da Luz Zeferino</td><td>51-1</td><td>1º</td><td>—</td></tr>
+      <tr><td>7508</td><td>Ilda Brito</td><td>53-1</td><td>1º</td><td>064</td></tr>
+      <tr><td>7694</td><td>Mª. dos Prazeres Jesus</td><td>83-1</td><td>2º</td><td>—</td></tr>
+      <tr><td>7851</td><td>Mª. Manuela Esteves</td><td>54-1</td><td>1º</td><td>—</td></tr>
+      <tr><td>7858</td><td>Furtunata Cioga</td><td>84-2</td><td>2º</td><td>—</td></tr>
+      <tr><td>7865</td><td>Jose Caçao</td><td>58-3</td><td>1º</td><td>JC</td></tr>
+      <tr><td>7910</td><td>Suzete</td><td>51-2</td><td>1º</td><td>—</td></tr>
+      <tr><td>7986</td><td>Lurdes Simões</td><td>82-2</td><td>2º</td><td>LS</td></tr>
+      <tr><td>7988</td><td>Alberto Serra</td><td>57-2</td><td>1º</td><td>—</td></tr>
+      <tr><td>7998</td><td>Ilda França</td><td>59-1</td><td>1º</td><td>—</td></tr>
+      <tr><td>8057</td><td>Pompilho Oliveira</td><td>57-1</td><td>1º</td><td>—</td></tr>
+      <tr><td>8145</td><td>Luísa Abreu</td><td>56-2</td><td>1º</td><td>—</td></tr>
+      <tr><td>8313</td><td>Lurdes Portugal Ferreira</td><td>70-1</td><td>2º</td><td>1349</td></tr>
+      <tr><td>8325</td><td>Elisa Correia</td><td>54-2</td><td>1º</td><td>—</td></tr>
+      <tr><td>8355</td><td>Conceição Costa</td><td>64-1</td><td>1º</td><td>3823</td></tr>
+      <tr><td>8356</td><td>Mª Armenia Agria</td><td>74-1</td><td>2º</td><td>—</td></tr>
+      <tr><td>8363</td><td>Germano</td><td>78-2</td><td>2º</td><td>24</td></tr>
+      <tr><td>8385</td><td>Mª Nazaré</td><td>77-1</td><td>2º</td><td>—</td></tr>
+      <tr><td>8407</td><td>Jose Serra</td><td>78-1</td><td>2º</td><td>—</td></tr>
+      <tr><td>—</td><td>José Alves</td><td>50-1</td><td>1º</td><td>43</td></tr>
+      <tr><td>—</td><td>—</td><td>50-2</td><td>1º</td><td>—</td></tr>
+      <tr><td>—</td><td>Célia Duarte</td><td>66-1</td><td>1º</td><td>CD</td></tr>
+      <tr><td>—</td><td>—</td><td>66-2</td><td>1º</td><td>—</td></tr>
+      <tr><td>—</td><td>Laura Batista</td><td>72-1</td><td>2º</td><td>—</td></tr>
+      <tr><td>—</td><td>—</td><td>72-2</td><td>2º</td><td>—</td></tr>
+      <tr><td>—</td><td>—</td><td>74-2</td><td>2º</td><td>—</td></tr>
+      <tr><td>—</td><td>—</td><td>75-1</td><td>2º</td><td>—</td></tr>
+      <tr><td>—</td><td>—</td><td>75-2</td><td>2º</td><td>—</td></tr>
+      <tr><td>—</td><td>—</td><td>81-2</td><td>2º</td><td>—</td></tr>
+      <tr><td>—</td><td>Lucília Oliveira</td><td>82-1</td><td>2º</td><td>LO / 44</td></tr>
+      <tr><td>—</td><td>—</td><td>85-1</td><td>2º</td><td>—</td></tr>
+      <tr><td>—</td><td>—</td><td>85-2</td><td>2º</td><td>—</td></tr>
+      <tr><td>—</td><td>—</td><td>86-1</td><td>2º</td><td>—</td></tr>
+      <tr><td>—</td><td>—</td><td>86-2</td><td>2º</td><td>—</td></tr>
+      <tr><td>—</td><td>—</td><td>87-1</td><td>2º</td><td>—</td></tr>
+      <tr><td>—</td><td>—</td><td>87-2</td><td>2º</td><td>—</td></tr>
+      <tr><td>—</td><td>—</td><td>88-1</td><td>2º</td><td>—</td></tr>
     </tbody>
   </table>
+  <div class="report-footer">Desenvolvido por Daniela Rdgs</div>
 </div>
 
 <div id="reportViewAlpha" class="report-page">
@@ -538,7 +546,7 @@
     </a>
     <button class="btn" id="printBtn2">Imprimir</button>
   </div>
-  <h2>Relatório de Marcação de Roupa</h2>
+  <h2>FBS - Lavandaria</h2>
   <div class="report-date" id="reportDateAlpha">Ordenado por ordem alfabética — 80 registos</div>
   <table>
     <thead>
@@ -633,6 +641,7 @@
       <tr><td>—</td><td>—</td><td>88-1</td><td>2º</td><td>—</td></tr>
     </tbody>
   </table>
+  <div class="report-footer">Desenvolvido por Daniela Rdgs</div>
 </div>
 
 <div id="reportViewQuarto" class="report-page">
@@ -643,7 +652,7 @@
     </a>
     <button class="btn" id="printBtn3">Imprimir</button>
   </div>
-  <h2>Relatório de Marcação de Roupa</h2>
+  <h2>FBS - Lavandaria</h2>
   <div class="report-date" id="reportDateQuarto">Ordenado por quarto</div>
   <table>
     <thead>
@@ -657,6 +666,7 @@
     </thead>
     <tbody id="reportTbodyQuarto"></tbody>
   </table>
+  <div class="report-footer">Desenvolvido por Daniela Rdgs</div>
 </div>
 
 <div id="reportViewPiso1" class="report-page">
@@ -667,7 +677,7 @@
     </a>
     <button class="btn" id="printBtn4">Imprimir</button>
   </div>
-  <h2>Relatório de Marcação de Roupa — 1º Piso</h2>
+  <h2>FBS - Lavandaria — 1º Piso</h2>
   <div class="report-date" id="reportDatePiso1">Ordenado por quarto</div>
   <table>
     <thead>
@@ -680,6 +690,7 @@
     </thead>
     <tbody id="reportTbodyPiso1"></tbody>
   </table>
+  <div class="report-footer">Desenvolvido por Daniela Rdgs</div>
 </div>
 
 <div id="reportViewPiso2" class="report-page">
@@ -690,7 +701,7 @@
     </a>
     <button class="btn" id="printBtn5">Imprimir</button>
   </div>
-  <h2>Relatório de Marcação de Roupa — 2º Piso</h2>
+  <h2>FBS - Lavandaria — 2º Piso</h2>
   <div class="report-date" id="reportDatePiso2">Ordenado por quarto</div>
   <table>
     <thead>
@@ -703,6 +714,7 @@
     </thead>
     <tbody id="reportTbodyPiso2"></tbody>
   </table>
+  <div class="report-footer">Desenvolvido por Daniela Rdgs</div>
 </div>
 
 <div class="save-indicator" id="saveIndicator">Guardado</div>
@@ -968,6 +980,7 @@ function generateReport(){
       <td>${r.nome || '—'}</td>
       <td>${r.quarto}</td>
       <td>${r.piso}</td>
+      <td>${r.outra || '—'}</td>
     `;
     reportTbody.appendChild(tr);
   }
