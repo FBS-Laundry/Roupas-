@@ -59,6 +59,27 @@
     gap:10px;
     margin-bottom:12px;
   }
+  .search-wrap{
+    position:relative;
+    flex:1;
+  }
+  .search-wrap input{width:100%;}
+  .search-clear{
+    position:absolute;
+    right:8px;
+    top:50%;
+    transform:translateY(-50%);
+    background:none;
+    border:none;
+    color:var(--muted);
+    font-size:1.1rem;
+    line-height:1;
+    cursor:pointer;
+    padding:4px 6px;
+    display:none;
+  }
+  .search-clear.show{display:block;}
+  .search-clear:hover{color:var(--accent-dark);}
   #search{
     flex:1;
     padding:10px 14px;
@@ -465,7 +486,10 @@
 
 <div class="controls">
   <div class="search-row">
-    <input type="text" id="search" placeholder="Pesquisar por quarto, nome, nº cliente ou marcação...">
+    <div class="search-wrap">
+      <input type="text" id="search" placeholder="Pesquisar por quarto, nome, nº cliente ou marcação...">
+      <button type="button" class="search-clear" id="searchClear" aria-label="Limpar pesquisa">✕</button>
+    </div>
   </div>
   <div class="filters">
     <span class="chip active" data-piso="todos">Todos os pisos</span>
@@ -1034,9 +1058,21 @@ function render(){
   generateAllReports();
 }
 
-document.getElementById('search').addEventListener('input', e=>{
+const searchInput = document.getElementById('search');
+const searchClearBtn = document.getElementById('searchClear');
+
+searchInput.addEventListener('input', e=>{
   state.search = e.target.value;
+  searchClearBtn.classList.toggle('show', e.target.value.length > 0);
   render();
+});
+
+searchClearBtn.addEventListener('click', ()=>{
+  searchInput.value = '';
+  state.search = '';
+  searchClearBtn.classList.remove('show');
+  render();
+  searchInput.focus();
 });
 
 document.querySelectorAll('.chip[data-piso]').forEach(chip=>{
@@ -1067,6 +1103,7 @@ function doAddRow(){
   saveData();
   state.search = '';
   document.getElementById('search').value = '';
+  document.getElementById('searchClear').classList.remove('show');
   render();
 }
 
